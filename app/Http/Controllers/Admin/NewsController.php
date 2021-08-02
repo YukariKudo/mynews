@@ -8,6 +8,7 @@ use App\News;
 use App\History;
 use Carbon\Carbon;
 use Storage;
+use App\Comment;
 
 class NewsController extends Controller
 {
@@ -15,9 +16,9 @@ class NewsController extends Controller
     public function add()
     {
         return view('admin.news.create');
-    }
+     }
     public function create(Request $request)
-    {
+     {
       $this->validate($request, News::$rules);
       $news = new News;
       $form = $request->all();
@@ -85,7 +86,7 @@ class NewsController extends Controller
       $history->news_id = $news->id;
       $history->edited_at = Carbon::now();
       $history->save();
-
+    
         return redirect('admin/news/');
     
         return redirect('admin/news');

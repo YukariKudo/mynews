@@ -9,7 +9,6 @@ class News extends Model
    protected $guarded = array('id');
 
     public static $rules = array(
-        'title' => 'required',
         'body' => 'required',
     );
     //
@@ -18,4 +17,11 @@ class News extends Model
       return $this->hasMany('App\History');
 
     }
+    
+    public function comments()//20210728コメント履歴残す際には必須
+    {
+      return $this->hasMany('App\Comment');
+
+    }
+
 }

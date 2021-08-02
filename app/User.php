@@ -36,4 +36,9 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+    
+    public function users()//20210730UserモデルとCommentモデルを繋ぐ//
+    {
+      return $this->hasMany('App\Comment');
+    }
 }

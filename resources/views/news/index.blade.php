@@ -23,6 +23,7 @@
                             <p class="body mx-auto">{{ str_limit($headline->body, 650) }}</p>
                         </div>
                     </div>
+                    <a href="{{ 'admin/comment/create?news_id=' . $headline->id }}">コメントを書く</a>{{--20210801トップページにコメントを書くのリンク--}}
                 </div>
             </div>
         @endif
@@ -48,12 +49,12 @@
                                     <img src="{{ $post->image_path }}">
                                 @endif
                             </div>
+                            {{-- 20210729コメント入力へのリンク書き方　＄はforeachで定義されているもの//--}}
+                        　　<a href="{{ 'admin/comment/create?news_id=' . $post->id }}">コメントを書く</a>
                         </div>
                     </div>
                     <hr color="#c0c0c0">
                 @endforeach
-            </div>
+          </div>
         </div>
-    </div>
-    </div>
 @endsection

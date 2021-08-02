@@ -11,7 +11,7 @@ class NewsController extends Controller
    public function index(Request $request)
     {
         $posts = News::all()->sortByDesc('updated_at');
-
+        //dd($posts);
         if (count($posts) > 0) {
             $headline = $posts->shift();
         } else {
@@ -19,4 +19,5 @@ class NewsController extends Controller
         }
         return view('news.index', ['headline' => $headline, 'posts' => $posts]);
     }
+  //
 }
