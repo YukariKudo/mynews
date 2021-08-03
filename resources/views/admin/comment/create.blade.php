@@ -41,10 +41,10 @@
                                     <th>内容</th>
                                   </tr>
                                 <tbody>
-                                @foreach ($news->comments as $comment)
+                                @foreach ($news->comments as $comment){{--newsモデルのcommentsメソッドにアクセス、$commentとして引き出し・ループ--}}
                                   <tr>
                                     <td>{{ str_limit($comment->created_at, 20)}}</td>
-                                    <td>{{ str_limit($comment->user->name ,10)}}</td>
+                                    <td>{{ str_limit($comment->user->name ,10)}}</td>{{--commentモデル→Userモデル→”name”を引っ張ってくる--}}
                                     <td>{{ str_limit($comment->body,30)}}</td>{{--20210801表示したい文字数を表記 --}}
                                   </tr>
                                 @endforeach

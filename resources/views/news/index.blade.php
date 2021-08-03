@@ -1,13 +1,17 @@
 @extends('layouts.front')
 
 @section('content')
+  <div class="header-title-area col-md-8 mx-auto">
+    <h1 class="logo">The news for practicing Programming</h1>
+      <p class="text-sub">不定期で情報提供します。</p>
+  </div>
     <div class="container">
-        <hr color="#c0c0c0">
         @if (!is_null($headline))
             <div class="row">
-                <div class="headline col-md-10 mx-auto">
+              <div style=" border:1px solid #000">
+                <div class="headline col-md-8 mx-auto">
                     <div class="row">
-                        <div class="col-md-6">
+                        <div class="col-md-8">
                             <div class="caption mx-auto">
                                 <div class="image">
                                     @if ($headline->image_path)
@@ -19,20 +23,20 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-6">
+                      </div>  
+                        <div class="col-md-8">
                             <p class="body mx-auto">{{ str_limit($headline->body, 650) }}</p>
                         </div>
-                    </div>
                     <a href="{{ 'admin/comment/create?news_id=' . $headline->id }}">コメントを書く</a>{{--20210801トップページにコメントを書くのリンク--}}
-                </div>
+                </div> 
             </div>
         @endif
-        <hr color="#c0c0c0">
         <div class="row">
             <div class="posts col-md-8 mx-auto mt-3">
                 @foreach($posts as $post)
                     <div class="post">
                         <div class="row">
+                          <div style=" border:1px solid #000">
                             <div class="text col-md-6">
                                 <div class="date">
                                     {{ $post->updated_at->format('Y年m月d日') }}
@@ -51,9 +55,10 @@
                             </div>
                             {{-- 20210729コメント入力へのリンク書き方　＄はforeachで定義されているもの//--}}
                         　　<a href="{{ 'admin/comment/create?news_id=' . $post->id }}">コメントを書く</a>
+                        　</div>
                         </div>
                     </div>
-                    <hr color="#c0c0c0">
+                    
                 @endforeach
           </div>
         </div>

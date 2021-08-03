@@ -1,6 +1,24 @@
-body {
-  color: #000;
+.header-title-area{
 }
+
+.container{
+  width:100% ;  
+}
+
+.body {
+  color: #000;
+  background-color: #fff;
+}
+// .post-block{
+//   padding: 0.5em 1em;
+//   margin: 2em 0;
+//   font-weight: bold;
+//   color: #000;/*文字色*/
+//   border-color: #000;
+//   background: #fff;
+//   border: solid 3px #6091d3;/*線*/
+//   border-radius: 10px;
+// }
 
 .header {
   .logo {
@@ -10,6 +28,9 @@ body {
 }
 
 .headline {
+  .post-block{
+    border:5px solid #000;
+  }
   .caption {
     position: relative;
     width: 350px;
@@ -26,7 +47,7 @@ body {
       background-color: rgba(0, 0, 0, 0.6);
       h1 {
     color: #fff;
-    font-size: 1.2em;
+    font-size: 0.8em;
       }
     }
     .body {
@@ -42,7 +63,7 @@ body {
       color: #999999;
     }
     .title {
-      font-size: 1.2em;
+      font-size: 0.8em;
       font-weight: bold;
     }
     .body {
@@ -50,7 +71,7 @@ body {
     }
     .image {
       img {
-    width: 250px;
+    width: 50px;
       }
     }
   }

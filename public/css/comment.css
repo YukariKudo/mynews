@@ -22,8 +22,12 @@ body {
   color: #fff;
 }
 
+.list-group li {
+  float: left;
+}
+
 .list-group-item {
-  border-color: #fff;
+  float: left;
   background-color: #000;
 }
 
